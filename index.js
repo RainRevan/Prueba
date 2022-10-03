@@ -26,23 +26,23 @@ function validacionForm() {
   if (proyecto.value.length < 1 || proyecto.value.trim() == "") {
     //mostrarMensajeError("proyecto", "Nombre no valido*");//
     alert("Nombre no valido*");
-    condicion = false;
+    return false;
   }
   if (nombre.value.length < 1 || nombre.value.trim() == "") {
     alert("Nombre no valido*");
-    condicion = false;
+    return false;
   }
   if (email.value.length < 1 || email.value.trim() == "") {
     alert("Correo no valido*");
-    condicion = false;
+    return false;
   }
   if (organizacion.value.length < 1 || organizacion.value.trim() == "") {
     alert("Organización no valida*");
-    condicion = false;
+    return false;
   }
   if (!terminosycondiciones.checked) {
     alert("Debe aceptar los términos y condiciones*");
-    condicion = false;
+    return false;
   }
   else {
     alert("Datos guardados con exito a continuación diligencie la información de su proyecto");
