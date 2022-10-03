@@ -1,25 +1,54 @@
-let button = document.getElementById("BtnRegistrarme");
-button.addEventListener("click", function() {
-     let inputproyecto = document.getElementById("proyecto");
-     let inputnombre = document.getElementById("nombre");
-     let inputemail = document.getElementById("email");
-     let inputorganizacion = document.getElementById("organizacion");
-     
-     if(inputproyecto.value == ""){
-          alert("Error: El proyecto esta vacio.");
-     }
-     else if(inputnombre.value == ""){
-          alert("Error: El nombre esta vacio.");
-     }
-     else if(inputemail.value == ""){
-          alert("Error: El email esta vacio.");
-     }
-     else if(inputorganizacion.value == ""){
-          alert("Error: La organización esta vacia.");
-     }
-     else{
-          window.location.replace("proyecto.html");
-          alert("Datos almacenados con éxito, continua con el registro de tu proyecto");
-     }
+// Formulario Proyecto//
+const proyecto = document.getElementById("proyecto");
+const nombre = document.getElementById("nombre");
+const email = document.getElementById("email");
+const organizacion = document.getElementById("organizacion");
+const terminosycondiciones = document.getElementById("terminosycondiciones");
+// llamado de formulario e inputs//
+const form = document.getElementById("form");
+const listInputs = document.querySelectorAll(".form-input");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let condicion = validacionForm();
+  if (condicion) {
+    enviarFormulario();
+  }
 });
-     
+
+function validacionForm() {
+  form.lastElementChild.innerHTML = "";
+  let condicion = true;
+  listInputs.forEach((element) => {
+    element.lastElementChild.innerHTML = "";
+  });
+
+  if (proyecto.value.length < 1 || proyecto.value.trim() == "") {
+    //mostrarMensajeError("proyecto", "Nombre no valido*");//
+    alert("Nombre no valido*");
+    condicion = false;
+  }
+  if (nombre.value.length < 1 || nombre.value.trim() == "") {
+    alert("Nombre no valido*");
+    condicion = false;
+  }
+  if (email.value.length < 1 || email.value.trim() == "") {
+    alert("Correo no valido*");
+    condicion = false;
+  }
+  if (organizacion.value.length < 1 || organizacion.value.trim() == "") {
+    alert("Organización no valida*");
+    condicion = false;
+  }
+  if (!terminosycondiciones.checked) {
+    alert("Debe aceptar los términos y condiciones*");
+    condicion = false;
+  }
+  else {
+    alert("Datos guardados con exito a continuación diligencie la información de su proyecto");
+  }
+  return condicion;
+}
+function enviarFormulario() {
+  window.location.replace("Proyecto.html");
+}
