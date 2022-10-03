@@ -18,7 +18,6 @@ button.addEventListener("click", function() {
           alert("Error: La organización esta vacia.");
      }
      else{
-          window.location.replace("proyecto.html");
           alert("Datos almacenados con éxito, continua con el registro de tu proyecto");
      }
 });
