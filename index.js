@@ -50,5 +50,5 @@ function validacionForm() {
   return condicion;
 }
 function enviarFormulario() {
-  window.location.replace("Proyecto.html");
+  window.location.replace("proyecto.html");
 }
