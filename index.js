@@ -8,16 +8,18 @@ button.addEventListener("click", function() {
      if(inputproyecto.value == ""){
           alert("Error: El proyecto esta vacio.");
      }
-     if(inputnombre.value == ""){
+     else if(inputnombre.value == ""){
           alert("Error: El nombre esta vacio.");
      }
-     if(inputemail.value == ""){
+     else if(inputemail.value == ""){
           alert("Error: El email esta vacio.");
      }
-     if(inputorganizacion.value == ""){
+     else if(inputorganizacion.value == ""){
           alert("Error: La organización esta vacia.");
      }
-     window.location.replace("proyecto.html");
-     alert("Datos almacenados con éxito, continua con el registro de tu proyecto");
+     else{
+          window.location.replace("proyecto.html");
+          alert("Datos almacenados con éxito, continua con el registro de tu proyecto");
+     }
 });
      
