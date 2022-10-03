@@ -1,1 +1,1 @@
-<?php include_once("Form.html"); ?>
+<?php require_once("Form.html"); ?>
