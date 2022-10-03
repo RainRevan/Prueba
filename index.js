@@ -8,8 +8,8 @@ const terminosycondiciones = document.getElementById("terminosycondiciones");
 const form = document.getElementById("form");
 const listInputs = document.querySelectorAll(".form-input");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
   let condicion = validacionForm();
   if (condicion) {
     enviarFormulario();
